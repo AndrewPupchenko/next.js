@@ -309,6 +309,7 @@ impl<T: KeyValueDatabase + Send + Sync + 'static> BackingStorageSealed
     }
 
     fn serialize(
+        &self,
         task: TaskId,
         data: &Vec<CachedDataItem>,
     ) -> Result<(SmallVec<[u8; 16]>, RcStrToLocalId)> {
