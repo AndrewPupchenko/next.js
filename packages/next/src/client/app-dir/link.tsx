@@ -366,7 +366,9 @@ export default function LinkComponent(
   const appPrefetchKind =
     prefetchProp === null || prefetchProp === 'auto'
       ? PrefetchKind.AUTO
-      : PrefetchKind.FULL
+      : process.env.__NEXT_DYNAMIC_IO
+        ? PrefetchKind.DYNAMIC
+        : PrefetchKind.FULL
 
   if (process.env.NODE_ENV !== 'production') {
     function createPropError(args: {
