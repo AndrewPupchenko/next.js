@@ -90,10 +90,10 @@ jobs:
 
       - uses: mshick/add-pr-comment@v2
         with:
-          message-id: benchmark-comment
+          message-id: bench-small-apps-comment
           message: |
             ${{ steps.bench.outputs.result-text }}
-            <!-- BENCHMARK -->
+            <!-- BENCHMARK-SMALL-APPS -->
 
   benchmark-large:
     name: Benchmark Rust Crates (large)
