@@ -99,7 +99,7 @@ fn bench_small_apps(c: &mut Criterion) {
                     allocations.push(alloc_info);
                 });
 
-                if let Ok(output_file_path) = std::env::var("GITHUB_STEP_SUMMARY") {
+                if let Ok(output_file_path) = std::env::var("GITHUB_OUTPUT") {
                     let mut file = std::fs::OpenOptions::new()
                         .create(true)
                         .append(true)
