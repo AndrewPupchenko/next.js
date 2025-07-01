@@ -154,7 +154,6 @@ pub async fn get_client_resolve_options_context(
     ty: ClientContextType,
     mode: Vc<NextMode>,
     next_config: Vc<NextConfig>,
-    has_rewrites: Vc<bool>,
     execution_context: Vc<ExecutionContext>,
 ) -> Result<Vc<ResolveOptionsContext>> {
     let next_client_import_map = get_next_client_import_map(
@@ -162,7 +161,6 @@ pub async fn get_client_resolve_options_context(
         ty.clone(),
         next_config,
         mode,
-        has_rewrites,
         execution_context,
     )
     .to_resolved()
@@ -236,7 +234,6 @@ pub async fn get_client_module_options_context(
     ty: ClientContextType,
     mode: Vc<NextMode>,
     next_config: Vc<NextConfig>,
-    has_rewrites: Vc<bool>,
     encryption_key: ResolvedVc<RcStr>,
     no_mangling: Vc<bool>,
 ) -> Result<Vc<ModuleOptionsContext>> {
@@ -246,7 +243,6 @@ pub async fn get_client_module_options_context(
         ty.clone(),
         mode,
         next_config,
-        has_rewrites,
         *execution_context,
     );
 
@@ -514,7 +510,6 @@ pub async fn get_client_runtime_entries(
     ty: ClientContextType,
     mode: Vc<NextMode>,
     next_config: Vc<NextConfig>,
-    has_rewrites: Vc<bool>,
     execution_context: Vc<ExecutionContext>,
 ) -> Result<Vc<RuntimeEntries>> {
     let mut runtime_entries = vec![];
@@ -523,7 +518,6 @@ pub async fn get_client_runtime_entries(
         ty.clone(),
         mode,
         next_config,
-        has_rewrites,
         execution_context,
     );
 
